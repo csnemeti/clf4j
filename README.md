@@ -1,5 +1,4 @@
-# clf4j
-Compact Logging Framework 4 Java
+# clf4j - Compact Logging Framework 4 Java
 
 One of the most popular logging solutions in Java projects is slf4j. Even if this is not doing the real log, it's a very usefulll facade since is simple to use and the API with variable arguments makes logging simple and easy.
 When we talk about the real log framework behind, situations is different... Logback is the most ovious target...
