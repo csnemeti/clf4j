@@ -1,0 +1,5 @@
+.idea/
+clf4j-core/target/
+*.iml
+clf4j-all/target/
+clf4j-config/target/

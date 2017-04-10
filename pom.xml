@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pfaalliance</groupId>
+    <artifactId>clf4j</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Compact Logging Framework for Java - parent module</name>
+
+	<properties>
+		<slf4j.version>1.7.25</slf4j.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+	
+	
+    <modules>
+        <module>clf4j-core</module>
+        <module>clf4j-config</module>
+        <module>clf4j-all</module>
+    </modules>
+</project>
