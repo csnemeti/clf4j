@@ -39,7 +39,7 @@ abstract class BaseLogger implements Logger {
      *
      * @param level  the logging level
      * @param marker the marker to check
-     * @return true if the level is enabled, flase otherwise
+     * @return true if the level is enabled, false otherwise
      */
     protected abstract boolean isEnabled(Level level, Marker marker);
 
@@ -50,7 +50,7 @@ abstract class BaseLogger implements Logger {
      * @param format    the text to log
      * @param arguments the arguments for the log
      */
-    protected abstract void log(Level level, String format, Object[] arguments);
+    protected abstract void doLog(Level level, String format, Object[] arguments);
 
     /**
      * Logs a message.
@@ -60,7 +60,34 @@ abstract class BaseLogger implements Logger {
      * @param format    the text to log
      * @param arguments the arguments for the log
      */
-    protected abstract void log(Level level, Marker marker, String format, Object[] arguments);
+    protected abstract void doLog(Level level, Marker marker, String format, Object[] arguments);
+
+    /**
+     * Logs a message.
+     *
+     * @param level     the message level
+     * @param format    the text to log
+     * @param arguments the arguments for the log
+     */
+    protected void log(Level level, String format, Object[] arguments) {
+        if (isEnabled(level)) {
+            doLog(level, format, arguments);
+        }
+    }
+
+    /**
+     * Logs a message.
+     *
+     * @param level     the message level
+     * @param marker    the main marker
+     * @param format    the text to log
+     * @param arguments the arguments for the log
+     */
+    protected void log(Level level, Marker marker, String format, Object[] arguments) {
+        if (isEnabled(level, marker)) {
+            doLog(level, marker, format, arguments);
+        }
+    }
 
     @Override
     public boolean isTraceEnabled() {

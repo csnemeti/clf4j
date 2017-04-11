@@ -32,7 +32,7 @@ public class Clf4jLoggerFactory implements ILoggerFactory {
         synchronized (loggers) {
             result = loggers.get(trimmedName);
             if (result == null) {
-                result = new BaseLogger(trimmedName);
+                result = new Clf4jLogger(trimmedName);
                 loggers.put(trimmedName, result);
             }
         }
