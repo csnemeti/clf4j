@@ -12,21 +12,23 @@ import java.util.Objects;
  */
 public class Clf4jLoggerFactory implements ILoggerFactory {
     private final Map<String, Logger> loggers = new HashMap<>();
-    private final Logger rootLogger = null;
 
     @Override
-    public Logger getLogger(String name) {
+    public Logger getLogger(final String name) {
         Objects.requireNonNull(name, "Logger name must not be null");
         String trimmedName = name.trim();
-        Logger result;
-        if (trimmedName.equals("")) {
-            result = rootLogger;
-        } else {
-            result = getOrCreateLogger(trimmedName);
+        if (trimmedName.equals("") || trimmedName.equalsIgnoreCase(Logger.ROOT_LOGGER_NAME)) {
+            trimmedName = Logger.ROOT_LOGGER_NAME;
         }
-        return result;
+        return getOrCreateLogger(trimmedName);
     }
 
+    /**
+     * Gets the logger from cache or creates a new one and put it into cache.
+     *
+     * @param trimmedName the logged name
+     * @return the coresponding logger for the given name
+     */
     private Logger getOrCreateLogger(final String trimmedName) {
         Logger result = null;
         synchronized (loggers) {

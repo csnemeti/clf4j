@@ -241,7 +241,7 @@ abstract class BaseLogger implements Logger {
 
     @Override
     public boolean isInfoEnabled(Marker marker) {
-        return isEnabled(Level.DEBUG, marker);
+        return isEnabled(Level.INFO, marker);
     }
 
     @Override
