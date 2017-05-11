@@ -13,21 +13,21 @@ public class Clf4jLogger extends BaseLogger {
 
     @Override
     protected boolean isEnabled(Level level) {
-        return false;
+        return Handler.getConfiguration().isEnabled(getName(), level, null);
     }
 
     @Override
     protected boolean isEnabled(Level level, Marker marker) {
-        return false;
+        return Handler.getConfiguration().isEnabled(getName(), level, marker);
     }
 
     @Override
     protected void doLog(Level level, String format, Object[] arguments) {
-
+        Handler.getLogging().doLog(getName(), level, null, format, arguments);
     }
 
     @Override
     protected void doLog(Level level, Marker marker, String format, Object[] arguments) {
-
+        Handler.getLogging().doLog(getName(), level, marker, format, arguments);
     }
 }
