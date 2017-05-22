@@ -1,4 +1,4 @@
-package com.pfaalliance.clf4j.core.config;
+package com.pfaalliance.clf4j.core.manager;
 
 import org.slf4j.Marker;
 import org.slf4j.event.Level;
@@ -24,7 +24,7 @@ public interface Configuration {
      * @param level  the minimum log level
      * @param marker the marker or marker chain or null if marker is not present
      */
-    void setEnabled(String name, Level level, Marker marker);
+    void setLevel(String name, Level level, Marker marker);
 
     /**
      * Removes any mapping (present) for the given loggr name and marker.

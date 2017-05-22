@@ -1,7 +1,4 @@
-package com.pfaalliance.clf4j.core;
-
-import com.pfaalliance.clf4j.core.config.Configuration;
-import com.pfaalliance.clf4j.core.log.Logging;
+package com.pfaalliance.clf4j.core.manager;
 
 /**
  * Created by Nemeti on 5/5/2017.
@@ -31,7 +28,7 @@ public final class Handler {
      */
     private static void initConfiguration() {
         if (configuration != null) {
-
+            configuration = new RootConfiguration();
         }
     }
 

@@ -1,5 +1,6 @@
 package com.pfaalliance.clf4j.core;
 
+import com.pfaalliance.clf4j.core.manager.Handler;
 import org.slf4j.Marker;
 import org.slf4j.event.Level;
 
